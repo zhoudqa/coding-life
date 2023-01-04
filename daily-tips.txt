@@ -1,0 +1,43 @@
+开发机
+DEBUG启动
+-Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=36003
+端口占用 
+lsof -i tcp:3307
+查看进程路径
+lsof -p ${pid}
+查看JAVA_HOME及其他设置
+java -XshowSettings:properties -version 
+磁盘剩余空间
+df -hl
+查看文件夹下文件大小
+du -h --max-depth=1 *
+查看每个根路径的分区大小
+df -h
+后台启动
+nohub {script} &
+查询关键字
+grep -n '1612240028' acc.log
+当前目录所有文件递归查找关键字
+grep -r '1612240028' *
+
+修改目录组和用户
+sudo chown product_pub:product_pub ${directory}
+
+macOS
+
+CMD+shift+. 显示隐藏文件
+export PATH=$PATH:/usr/local/share 更新path
+
+MySQL
+查看最大连接数 show variables like '%max_connections%';
+查看当前连接 show processlist
+设置最大连接数 set GLOBAL max_connections = 2000;
+
+
+删除git submodule
+1. git submodule deinit -f -- a/submodule    
+2. rm -rf .git/modules/a/submodule
+3. git rm -f a/submodule
+
+本地master push到远程hotfixes分支
+git push origin +master:hotfixes
